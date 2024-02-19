@@ -1,0 +1,21 @@
+﻿@page "/contacts/new"
+@using Microsoft.AspNetCore.Mvc.ModelBinding
+@model ContactApp.Web.Pages.NewContactModel
+
+@{
+    ViewData["Title"] = "Create Contact";
+}
+
+<h3>New Contact</h3>
+<div class="row justify-content-center">
+    <div class="col-sm-12 col-md-6">
+        <partial name="ContactForm" model="@Model.NewContact"/>
+    </div>
+</div>
+
+<p>
+    <a asp-page="ViewAllContacts" class="btn btn-primary" role="button">
+        <i class="fa fa-home"></i>
+        Home
+    </a>
+</p>

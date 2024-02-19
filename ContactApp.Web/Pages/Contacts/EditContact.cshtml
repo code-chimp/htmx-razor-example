@@ -1,0 +1,21 @@
+﻿@page "/contacts/{id:int}/edit"
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model ContactApp.Web.Pages.EditContactModel
+
+@{
+    ViewData["Title"] = "Edit Contact";
+}
+
+<h3>Update Contact</h3>
+<div class="row justify-content-center">
+    <div class="col-sm-12 col-md-6">
+        <partial name="ContactForm" model="@Model.UpdateContact"/>
+    </div>
+</div>
+
+<p>
+    <a asp-page="ViewAllContacts" class="btn btn-primary" role="button">
+        <i class="fa fa-home"></i>
+        Home
+    </a>
+</p>
