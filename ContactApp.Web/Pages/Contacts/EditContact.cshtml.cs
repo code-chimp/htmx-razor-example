@@ -11,8 +11,11 @@ public class EditContactModel : PageModel
     private readonly ILogger<EditContactModel> _logger;
     private readonly IContactService _service;
 
-    [FromRoute] public int Id { get; set; }
-    [BindProperty] public ContactEdit UpdateContact { get; set; }
+    [FromRoute]
+    public int Id { get; set; }
+
+    [BindProperty]
+    public ContactEdit UpdateContact { get; set; }
 
     public EditContactModel(ILogger<EditContactModel> logger, IContactService service)
     {
@@ -45,7 +48,9 @@ public class EditContactModel : PageModel
 
         var contacts = _service.GetAll();
 
-        var dupe = contacts.FirstOrDefault(c => c.Email == UpdateContact.Email && c.Id != UpdateContact.Id);
+        var dupe = contacts.FirstOrDefault(c =>
+            c.Email == UpdateContact.Email && c.Id != UpdateContact.Id
+        );
 
         if (contacts.Any(c => c.Email == UpdateContact.Email && c.Id != UpdateContact.Id))
         {

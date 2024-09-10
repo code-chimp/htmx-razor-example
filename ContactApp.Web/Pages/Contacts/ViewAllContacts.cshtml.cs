@@ -1,7 +1,7 @@
 using System.Diagnostics;
-using Microsoft.AspNetCore.Mvc.RazorPages;
 using ContactApp.Web.Models;
 using ContactApp.Web.Services;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace ContactApp.Web.Pages.Contacts;
 
@@ -20,13 +20,11 @@ public class ViewAllContactsModel : PageModel
 
     public void OnGet()
     {
-        // check for query string "q" and filter contacts 
+        // check for query string "q" and filter contacts
         if (Request.Query.ContainsKey("q"))
         {
             var query = Request.Query["q"].ToString();
-            Contacts = string.IsNullOrEmpty(query)
-                ? _service.GetAll()
-                : _service.Search(query);
+            Contacts = string.IsNullOrEmpty(query) ? _service.GetAll() : _service.Search(query);
             return;
         }
 

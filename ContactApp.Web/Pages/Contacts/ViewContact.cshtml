@@ -6,7 +6,7 @@
 }
 
 <div class="row justify-content-center">
-    <div class="col-sm-12 col-md-6 col-lg-3">
+    <div class="col-sm-12 col-md-6">
         <div class="card">
             <div class="card-body">
                 <dl>
@@ -17,15 +17,15 @@
                     <dt>Phone</dt>
                     <dd>@Model.Contact.Phone</dd>
                 </dl>
-                <a asp-page="ViewAllContacts" 
-                   class="btn btn-primary" 
+                <a asp-page="ViewAllContacts"
+                   class="btn btn-primary"
                    role="button">
                     <i class="fa fa-home"></i>
                     Home
                 </a>
-                <a asp-page="EditContact" 
-                   asp-route-id="@Model.Contact.Id" 
-                   class="btn btn-success" 
+                <a asp-page="EditContact"
+                   asp-route-id="@Model.Contact.Id"
+                   class="btn btn-success"
                    role="button">
                     <i class="fa fa-pencil"></i>
                     Edit

@@ -7,12 +7,13 @@ public class ContactService : IContactService
 {
     private List<Contact> _contacts;
 
-    private readonly JsonSerializerOptions jsonOptions = new()
-    {
-        PropertyNameCaseInsensitive = true,
-        PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
-        WriteIndented = true
-    };
+    private readonly JsonSerializerOptions jsonOptions =
+        new()
+        {
+            PropertyNameCaseInsensitive = true,
+            PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+            WriteIndented = true
+        };
 
     public ContactService()
     {
@@ -39,10 +40,12 @@ public class ContactService : IContactService
 
     public IEnumerable<Contact> Search(string query)
     {
-        return _contacts.Where(c => c.First.Contains(query, StringComparison.OrdinalIgnoreCase) ||
-                                    c.Last.Contains(query, StringComparison.OrdinalIgnoreCase) ||
-                                    c.Email.Contains(query, StringComparison.OrdinalIgnoreCase) ||
-                                    c.Phone.Contains(query, StringComparison.OrdinalIgnoreCase));
+        return _contacts.Where(c =>
+            c.First.Contains(query, StringComparison.OrdinalIgnoreCase)
+            || c.Last.Contains(query, StringComparison.OrdinalIgnoreCase)
+            || c.Email.Contains(query, StringComparison.OrdinalIgnoreCase)
+            || c.Phone.Contains(query, StringComparison.OrdinalIgnoreCase)
+        );
     }
 
     public bool Create(ContactEdit contact)
@@ -60,7 +63,10 @@ public class ContactService : IContactService
 
             _contacts.Add(newContact);
 
-            File.WriteAllText("Data/contacts.json", JsonSerializer.Serialize(_contacts, jsonOptions));
+            File.WriteAllText(
+                "Data/contacts.json",
+                JsonSerializer.Serialize(_contacts, jsonOptions)
+            );
 
             return true;
         }
@@ -86,7 +92,10 @@ public class ContactService : IContactService
                 Email = contact.Email
             };
 
-            File.WriteAllText("Data/contacts.json", JsonSerializer.Serialize(_contacts, jsonOptions));
+            File.WriteAllText(
+                "Data/contacts.json",
+                JsonSerializer.Serialize(_contacts, jsonOptions)
+            );
 
             return true;
         }
@@ -103,7 +112,10 @@ public class ContactService : IContactService
         {
             _contacts.RemoveAll(c => c.Id == id);
 
-            File.WriteAllText("Data/contacts.json", JsonSerializer.Serialize(_contacts, jsonOptions));
+            File.WriteAllText(
+                "Data/contacts.json",
+                JsonSerializer.Serialize(_contacts, jsonOptions)
+            );
 
             return true;
         }

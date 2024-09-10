@@ -5,6 +5,12 @@
 }
 
 <div class="row mb-1">
+    <div class="col d-flex justify-content-start">
+        <a class="btn btn-outline-primary d-block" role="button" asp-page="NewContact">
+            <i class="fa fa-circle-plus"></i>
+            Add Contact
+        </a>
+    </div>
     <div class="col d-flex justify-content-end">
         <form asp-page="ViewAllContacts" method="get" class="row row-cols-lg-auto g-2 align-items-center">
             <div class="col-12">
@@ -64,14 +70,7 @@
         </tbody>
         <tfoot>
         <tr>
-            <td colspan="5">
-                <div class="row d-flex justify-content-end p-2 g-3">
-                    <a class="btn btn-outline-primary d-block" role="button" asp-page="NewContact">
-                        <i class="fa fa-circle-plus"></i>
-                        Add Contact
-                    </a>
-                </div>
-            </td>
+            <td colspan="5">&nbsp;</td>
         </tr>
         </tfoot>
     </table>

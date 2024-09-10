@@ -10,7 +10,8 @@ public class NewContactModel : PageModel
     private readonly ILogger<NewContactModel> _logger;
     private readonly IContactService _service;
 
-    [BindProperty] public ContactEdit NewContact { get; set; }
+    [BindProperty]
+    public ContactEdit NewContact { get; set; }
 
     public NewContactModel(ILogger<NewContactModel> logger, IContactService service)
     {
