@@ -52,7 +52,7 @@ public class EditContactModel : PageModel
             c.Email == UpdateContact.Email && c.Id != UpdateContact.Id
         );
 
-        if (contacts.Any(c => c.Email == UpdateContact.Email && c.Id != UpdateContact.Id))
+        if (dupe != null)
         {
             ModelState.AddModelError("Email", "Email is already in use by another contact");
             return Page();

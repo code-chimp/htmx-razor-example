@@ -6,7 +6,6 @@
       "library": "alpinejs@3.14.1",
       "destination": "wwwroot/lib/alpinejs",
         "files": [
-          "cdn.js",
           "cdn.min.js"
         ]
     },
@@ -14,30 +13,43 @@
       "library": "bootstrap@5.3.3",
       "destination": "wwwroot/lib/bootstrap",
       "files": [
-        "css/bootstrap.css",
-        "css/bootstrap.css.map",
         "css/bootstrap.min.css",
         "css/bootstrap.min.css.map",
-        "js/bootstrap.bundle.js",
-        "js/bootstrap.bundle.js.map",
         "js/bootstrap.bundle.min.js",
         "js/bootstrap.bundle.min.js.map"
       ]
     },
     {
-      "library": "htmx@2.0.0",
-      "destination": "wwwroot/lib/htmx"
-    },
-    {
       "library": "font-awesome@6.6.0",
       "destination": "wwwroot/lib/font-awesome",
       "files": [
-        "css/all.css",
         "css/all.min.css",
-        "js/all.js",
         "js/all.min.js",
         "sprites/*",
         "webfonts/*"
+      ]
+    },
+    {
+      "library": "htmx@2.0.2",
+      "destination": "wwwroot/lib/htmx",
+      "files": [
+        "htmx.min.js"
+      ]
+    },
+    {
+      "provider": "unpkg",
+      "library": "hyperscript.org@0.9.12",
+      "destination": "wwwroot/lib/hyperscript.org",
+      "files": [
+        "dist/_hyperscript.min.js"
+      ]
+    },
+    {
+      "library": "sweetalert2@11.14.0",
+      "destination": "wwwroot/lib/sweetalert2",
+      "files": [
+        "sweetalert2.min.css",
+        "sweetalert2.all.min.js"
       ]
     }
   ]
